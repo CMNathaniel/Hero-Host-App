@@ -10,28 +10,30 @@
     <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
 </head>
 <header>
-    <nav class="navbar">
+    <nav class="menu">
+        <img src="./cooking_man_chef.png" alt="Girl chef cartoon">
+        <div class="item name">
         <h1>The Hero Host</h1>
-        <ul>
-            <li><h2><a href="meals.html" class="button">Meals Recipes</a></h2></li>
-        </ul> 
-    </nav>
-</header>
+        </div>
+        <h3><a href="meals.html" class="button">Meal Recipes</a></h3> 
+        </nav>
+    </header>
 <body>
     <div class="container">
         <h1>Cocktail Recipe Finder</h1>
         <form id="js-form">
-            <label for="search-term" >Search for a cocktail recipe name!</label>
+            <label for="search-term">Search for a cocktail recipe name!</label>
             <input type="text" value="margarita" name="search-term" id="js-search-term" required>
             <br>
-            <input type="submit" value="Find my recipes!" class="button">
+            <button input type="submit">Find my recipes!</button>
         </form>
-
         <p id="js-error-message" class="error-message"></p>
         <section id="results" class="hidden">
-          <h2>Recipe Results</h2>
-          <ul id="results-list">
-          </ul>
+            <h2>Cocktail Recipe Results</h2>
+            <button onclick="expandResults()">Expand All Results</button>
+            <div id="expanded-results" class="hidden"></div>
+            <ul id="results-list">
+            </ul>
         </section>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>

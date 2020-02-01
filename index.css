@@ -7,7 +7,7 @@ body {
   font-size: 16px;
 }
 
-button {
+.search-button {
   border: 4px;
   border-color: black;
   margin: 4px 2px;
@@ -50,8 +50,8 @@ input.button {
   padding: 30px;
 }
 
-.navbar {
-  background-color: darkgrey;
+.menu {
+  background-color: green;
   color: white;
   vertical-align: middle;
   padding: 15px;
@@ -61,6 +61,12 @@ input.button {
   justify-content: right;
   padding-left: 15px;
   padding-right: 15px;
+  align-items: center;
+}
+
+.menu img {
+  max-width: 200px;
+  align-items: center;
 }
 
 .error-message {
@@ -73,4 +79,29 @@ input.button {
 
 .results-img {
   max-width: 300px;
+
+@media screen and (min-width: 520px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu > .item {
+    flex: 1 1 50px;
+    border: none;
+  }
+  
+  .menu > .item > input {
+    width: 90%;
+  }
+  
+  .menu > .name {
+    flex: 0 0 120px;
+  }
+  
+  .menu > .logo {
+    flex: 0 0 35px;
+  }
 }

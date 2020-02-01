@@ -10,11 +10,12 @@
     <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
 </head>
 <header>
-    <nav class="navbar">
-        <h1>The Hero Host</h1>
-        <ul>
-        <li><h2><a href="cocktails.html" class="button">Cocktail Recipes</a></h2></li>
-        </ul> 
+    <nav class="menu">
+        <img src="./cooking_man_chef.png" alt="Girl chef cartoon">
+        <div class="item name">
+            <h1>The Hero Host</h1>
+        </div>
+        <h3><a href="cocktails.html" class="button">Cocktail Recipes</a></h3> 
     </nav>
 </header>
 <body>
@@ -24,14 +25,13 @@
             <label for="search-term" >Search for a meal recipe name!</label>
             <input type="text" value="soup" name="search-term" id="js-search-term" required>
             <br>
-            <input type="submit" value="Find my recipes!" class="button">
+            <button input type="submit">Find my recipes!</button>
         </form>
-
         <p id="js-error-message" class="error-message"></p>
         <section id="results" class="hidden">
-          <h2>Recipe Results</h2>
+          <h2>Meal Recipe Results</h2>
           <button onclick="expandResults()">Expand All Results</button>
-          <div id="expanded-results"></div>
+          <div id="expanded-results" class="hidden"></div>
           <ul id="results-list">
           </ul>
         </section>

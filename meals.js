@@ -25,7 +25,7 @@ function watchForm() {
 }  
 
 function displayResults(responseJson) {
-  console.log(responseJson);
+  console.log(`This is clicking on Find my Recipe`);
   $('#results-list').empty();
   responseJson.meals.forEach((meals) => {
   $('#results-list').append(
@@ -36,6 +36,20 @@ function displayResults(responseJson) {
       <p>Category: ${meals.strCategory}</p>
     </ul>`
    )
+  });
+ $('#results').removeClass('hidden');
+}
+
+function expandResults(responseJson) {
+  console.log(`This is clicking on Expand All Results`);
+  var x = document.getElementById("expanded-results");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+  $('#results-list').empty();
+  responseJson.meals.forEach((meals) => {
   $('#expanded-results').append(
     `<ul>
       <h3><a href="${meals.strSource}" target="_blank">${meals.strMeal}</a></h3>
@@ -43,34 +57,26 @@ function displayResults(responseJson) {
       <p>Region: ${meals.strArea}</p>
       <p>Category: ${meals.strCategory}</p>
       <p>Instructions: ${meals.strInstructions}</p>
+      <p>Ingredients: </p>
       <ul>
-        <li>Ingredients: ${meals.strIngredient1}</li>
-        <li>Ingredients: ${meals.strIngredient2}</li>
-        <li>Ingredients: ${meals.strIngredient3}</li>
-        <li>Ingredients: ${meals.strIngredient4}</li>
-        <li>Ingredients: ${meals.strIngredient5}</li>
-        <li>Ingredients: ${meals.strIngredient6}</li>
-        <li>Ingredients: ${meals.strIngredient7}</li>
-        <li>Ingredients: ${meals.strIngredient8}</li>
-        <li>Ingredients: ${meals.strIngredient9}</li>
-        <li>Ingredients: ${meals.strIngredient10}</li>
+        <li>${meals.strIngredient1}</li>
+        <li>${meals.strIngredient2}</li>
+        <li>${meals.strIngredient3}</li>
+        <li>${meals.strIngredient4}</li>
+        <li>${meals.strIngredient5}</li>
+        <li>${meals.strIngredient6}</li>
+        <li>${meals.strIngredient7}</li>
+        <li>${meals.strIngredient8}</li>
+        <li>${meals.strIngredient9}</li>
+        <li>${meals.strIngredient10}</li>
       </ul>
     </ul>`
-   )
+    )
   });
- $('#results').removeClass('hidden');
-}
-
-function expandResults() {
-  var x = document.getElementById("#expanded-results");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
+  $('#expanded-results').removeClass('hidden');
 }
 
 $(function() {
-console.log('App loaded! Waiting for submit!');
-watchForm();
-});
+  console.log('App loaded! Waiting for submit!');
+  watchForm();
+  });
