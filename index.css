@@ -3,24 +3,68 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
 }
 
-button, input[type="text"] {
-  padding: 5px;
+button {
+  border: 4px;
+  border-color: black;
+  margin: 4px 2px;
+  padding: 15px 32px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  background-color: inherit;
+  text-align: center;
+  text-decoration: none;
 }
 
 button:hover {
   cursor: pointer;
 }
 
+input.button {
+  border: 4px;
+  border-color: black;
+  margin: 4px 2px;
+  padding: 15px 32px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  background-color: inherit;
+  text-align: center;
+  text-decoration: none;
+}
+
+#expanded-results {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  margin-top: 20px;
+}
+
 .container {
   max-width: 600px;
   margin: 0 auto;
+  padding: 30px;
+}
+
+.navbar {
+  background-color: darkgrey;
+  color: white;
+  vertical-align: middle;
+  padding: 15px;
+  font-size: 24px;
+  margin-bottom: 5px;
+  text-align: center;
+  justify-content: right;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .error-message {
-    color: red;
+  color: red;
 }
 
 .hidden {
@@ -28,14 +72,5 @@ button:hover {
 }
 
 .results-img {
-  max-width: 100px;
-}
-
-.homepage-button {
-    border: none;
-    background-color: inherit;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
-    display: inline-block;
+  max-width: 300px;
 }

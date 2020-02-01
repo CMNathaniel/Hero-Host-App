@@ -7,19 +7,24 @@
     <title>The Hero Host</title>
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
 </head>
-<body>
-    <nav>
-        <button class="homepage-button">
-        <h2><a href="index.html">Homepage</a></h1> 
+<header>
+    <nav class="navbar">
+        <h1>The Hero Host</h1>
+        <ul>
+            <li><h2><a href="meals.html" class="button">Meals Recipes</a></h2></li>
+        </ul> 
     </nav>
+</header>
+<body>
     <div class="container">
         <h1>Cocktail Recipe Finder</h1>
         <form id="js-form">
             <label for="search-term" >Search for a cocktail recipe name!</label>
             <input type="text" value="margarita" name="search-term" id="js-search-term" required>
             <br>
-            <input type="submit" value="Find my recipes!">
+            <input type="submit" value="Find my recipes!" class="button">
         </form>
 
         <p id="js-error-message" class="error-message"></p>
@@ -30,6 +35,6 @@
         </section>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="index2.js"></script>
+    <script src="cocktails.js"></script>
 </body>
 </html>
