@@ -11,7 +11,7 @@ function getRecipe(category) {
     })
     .then(responseJson => displayResults(responseJson))
     .catch(err => {
-      $('#js-error-message').text(`Something went wrong: ${err.message}`);
+      $('#js-error-message').text(`Something went wrong, please try another search`);
     });
 }
 
@@ -25,8 +25,9 @@ function watchForm() {
 }  
 
 function displayResults(responseJson) {
-  console.log(`This is clicking on Find my Recipe`);
+  console.log(responseJson);
   $('#results-list').empty();
+  $('#expanded-results').empty();
   responseJson.meals.forEach((meals) => {
   $('#results-list').append(
     `<ul>
@@ -36,20 +37,6 @@ function displayResults(responseJson) {
       <p>Category: ${meals.strCategory}</p>
     </ul>`
    )
-  });
- $('#results').removeClass('hidden');
-}
-
-function expandResults(responseJson) {
-  console.log(`This is clicking on Expand All Results`);
-  var x = document.getElementById("expanded-results");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-  $('#results-list').empty();
-  responseJson.meals.forEach((meals) => {
   $('#expanded-results').append(
     `<ul>
       <h3><a href="${meals.strSource}" target="_blank">${meals.strMeal}</a></h3>
@@ -57,6 +44,7 @@ function expandResults(responseJson) {
       <p>Region: ${meals.strArea}</p>
       <p>Category: ${meals.strCategory}</p>
       <p>Instructions: ${meals.strInstructions}</p>
+      <p><a href="${meals.strYoutube}" target="_blank">Watch a how-to video</a></p>
       <p>Ingredients: </p>
       <ul>
         <li>${meals.strIngredient1}</li>
@@ -71,12 +59,27 @@ function expandResults(responseJson) {
         <li>${meals.strIngredient10}</li>
       </ul>
     </ul>`
-    )
+   )
   });
-  $('#expanded-results').removeClass('hidden');
+ $('#results').removeClass('hidden');
+}
+
+function expandResults() {
+  var x = document.getElementById("expanded-results");
+  if (x.className === "hidden") {
+    x.className = "block";
+  } else {
+    x.className = "hidden";
+  }
+  var y = document.getElementById("results-list");
+  if (y.className === "hidden") {
+    y.className = "block";
+  } else {
+    y.className = "hidden";
+  }
 }
 
 $(function() {
   console.log('App loaded! Waiting for submit!');
   watchForm();
-  });
+});

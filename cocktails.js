@@ -11,7 +11,7 @@ function getRecipe(category) {
     })
     .then(responseJson => displayResults(responseJson))
     .catch(err => {
-      $('#js-error-message').text(`Something went wrong: ${err.message}`);
+      $('#js-error-message').text(`Something went wrong, please try another search`);
     });
 }
 
@@ -27,6 +27,8 @@ function watchForm() {
 function displayResults(responseJson) {
   console.log(responseJson);
   $('#results-list').empty();
+  $('#expanded-results').empty();
+  //$('#js-error-message').addClass('hidden');
   responseJson.drinks.forEach((drinks) => {
   $('#results-list').append(
     `<ul>
@@ -56,12 +58,19 @@ function displayResults(responseJson) {
 
 function expandResults() {
   var x = document.getElementById("expanded-results");
-  if (x.style.display === "none") {
-    x.style.display = "block";
+  if (x.className === "hidden") {
+    x.className = "block";
   } else {
-    x.style.display = "none";
+    x.className = "hidden";
+  }
+  var y = document.getElementById("results-list");
+  if (y.className === "hidden") {
+    y.className = "block";
+  } else {
+    y.className = "hidden";
   }
 }
+
 
 $(function() {
 console.log('App loaded! Waiting for submit!');

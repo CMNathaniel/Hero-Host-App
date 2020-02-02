@@ -55,7 +55,7 @@ input.button {
   color: white;
   vertical-align: middle;
   padding: 15px;
-  font-size: 24px;
+  font-size: 35px;
   margin-bottom: 5px;
   text-align: center;
   justify-content: right;
@@ -80,6 +80,8 @@ input.button {
 .results-img {
   max-width: 300px;
 
+
+/*
 @media screen and (min-width: 520px) {
   .menu {
     display: flex;
@@ -105,3 +107,4 @@ input.button {
     flex: 0 0 35px;
   }
 }
+*/
