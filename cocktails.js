@@ -43,8 +43,7 @@ function displayResults(responseJson) {
         <img src="${drinks.strDrinkThumb}" class="results-img">
         <p>Category: ${drinks.strCategory}</p>
         <p>Instructions: ${drinks.strInstructions}</p>
-      <p>Ingredients: </p>` 
-      responseJson.drinks.forEach((drinks.strIngredient) => {
+      <p>Ingredients: </p>
       <ul>
         <li>${drinks.strIngredient1} - ${drinks.strMeasure1}</li>
         <li>${drinks.strIngredient2} - ${drinks.strMeasure2}</li>
