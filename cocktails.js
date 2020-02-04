@@ -42,14 +42,12 @@ function displayResults(responseJson) {
         <h3>${drinks.strDrink}</h3>
         <img src="${drinks.strDrinkThumb}" class="results-img">
         <p>Category: ${drinks.strCategory}</p>
+        <p>Ingredients: </p> 
+          <ul>`
+          responseJson.drinks.forEach((drinks.strIngredient, drinks.StrMeasure) =>
+          `<li>${drinks.strIngredient[i]} - ${drinks.strMeasure[i]}</li>
+          </ul>
         <p>Instructions: ${drinks.strInstructions}</p>
-      <p>Ingredients: </p>
-      <ul>
-        <li>${drinks.strIngredient1} - ${drinks.strMeasure1}</li>
-        <li>${drinks.strIngredient2} - ${drinks.strMeasure2}</li>
-        <li>${drinks.strIngredient3} - ${drinks.strMeasure3}</li>
-        <li>${drinks.strIngredient4} - ${drinks.strMeasure4}</li>
-      </ul>
     </ul>`
    )
   });

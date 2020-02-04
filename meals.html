@@ -7,30 +7,27 @@
     <title>Meal Recipes</title>
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Biryani|Roboto&display=swap" rel="stylesheet">
 </head>
 <header>
     <nav class="menu">
-        <img src="./cooking_man_chef.png" alt="Girl chef cartoon">
-        <div class="item name">
-            <h1>The Hero Host</h1>
-        </div>
-        <p><a href="cocktails.html">Go to Cocktail Recipes</a></p> 
+        <h1>The Hero Host</h1>  
     </nav>
 </header>
 <body>
     <div class="container">
+        <p><a href="cocktails.html">Go to Cocktail Recipes</a></p>
         <h1>Meal Recipe Finder</h1>
         <form id="js-form">
             <label for="search-term" >Search for a meal recipe name!</label>
             <input type="text" value="soup" name="search-term" id="js-search-term" required>
             <br>
-            <button input type="submit">Find my recipes!</button>
+            <button input type="submit" class="button">Find my recipes!</button>
         </form>
         <p id="js-error-message" class="error-message"></p>
         <section id="results" class="hidden">
           <h2>Meal Recipe Results</h2>
-          <button onclick="expandResults()">Expand/Collapse All Results</button>
+          <button class="button" onclick="expandResults()">Expand/Collapse All Results</button>
           <div id="expanded-results" class="hidden"></div>
           <ul id="results-list">
           </ul>

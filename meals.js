@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 function getRecipe(category) {
   console.log(category);
@@ -25,7 +25,6 @@ function watchForm() {
 }  
 
 function displayResults(responseJson) {
-  console.log(responseJson);
   $('#results-list').empty();
   $('#expanded-results').empty();
   $('#js-error-message').empty();
@@ -44,21 +43,13 @@ function displayResults(responseJson) {
       <img src="${meals.strMealThumb}" class="results-img">
       <p>Region: ${meals.strArea}</p>
       <p>Category: ${meals.strCategory}</p>
+      <p>Ingredients: </p>
+      <ul>`
+        responseJson.meals.forEach((meals.strIngredient, meals.strMeasure) =>
+        `<li>${meals.strIngredient} - ${meals.strMeasure}</li>
+      </ul>
       <p>Instructions: ${meals.strInstructions}</p>
       <p><a href="${meals.strYoutube}" target="_blank">Watch a how-to video</a></p>
-      <p>Ingredients: </p>
-      <ul>
-        <li>${meals.strIngredient1}</li>
-        <li>${meals.strIngredient2}</li>
-        <li>${meals.strIngredient3}</li>
-        <li>${meals.strIngredient4}</li>
-        <li>${meals.strIngredient5}</li>
-        <li>${meals.strIngredient6}</li>
-        <li>${meals.strIngredient7}</li>
-        <li>${meals.strIngredient8}</li>
-        <li>${meals.strIngredient9}</li>
-        <li>${meals.strIngredient10}</li>
-      </ul>
     </ul>`
    )
   });

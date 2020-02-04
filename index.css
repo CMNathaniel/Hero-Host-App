@@ -3,82 +3,77 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
-}
-
-.search-button {
-  border: 4px;
-  border-color: black;
-  margin: 4px 2px;
-  padding: 15px 32px;
-  font-size: 16px;
-  cursor: pointer;
-  display: inline-block;
-  background-color: inherit;
-  text-align: center;
-  text-decoration: none;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-input.button {
-  border: 4px;
-  border-color: black;
-  margin: 4px 2px;
-  padding: 15px 32px;
-  font-size: 16px;
-  cursor: pointer;
-  display: inline-block;
-  background-color: inherit;
-  text-align: center;
-  text-decoration: none;
-}
-
-#expanded-results {
-  width: 100%;
-  padding: 50px 0;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 30px;
+  color: #B30500;
 }
 
 .menu {
-  background-color: green;
-  color: white;
+  font-family: 'Biryani', sans-serif;
+  color: #09B342;
   vertical-align: middle;
-  padding: 15px;
   font-size: 35px;
-  margin-bottom: 5px;
   text-align: center;
-  justify-content: right;
-  padding-left: 15px;
-  padding-right: 15px;
   align-items: center;
 }
 
-.menu img {
-  max-width: 200px;
+.container {
+  max-width: 1200;
+  margin: auto;
+  padding: 20px;
+  text-align: left;
   align-items: center;
+  vertical-align: middle;
+}
+
+.button {
+  border: 4px;
+  border-color: black;
+  margin: 4px 2px;
+  padding: 15px 32px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  background-color: inherit;
+  text-align: center;
+  text-decoration: none;
+ 
+}
+
+/* #cartoon {
+  background-image: url(./cooking_man_chef.png);
+  background-repeat: no-repeat; 
+  width: 600px;
+  height: 200px;
+}
+*/
+
+.search-area {
+  max-width: 50%;
+  align-items: left;
+}
+
+#results-list img {
+  max-width: 100px;
+}
+
+#expanded-results img {
+  max-width: 400px;
 }
 
 .error-message {
-  color: red;
+  color: black;
 }
 
 .hidden {
   display: none;
 }
 
-.results-img {
-  max-width: 300px;
+a:link, a:visited, a:hover, a:active {
+  color: black;
+}
+
+
 
 
 /*
