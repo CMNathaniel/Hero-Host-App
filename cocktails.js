@@ -28,7 +28,7 @@ function displayResults(responseJson) {
   console.log(responseJson);
   $('#results-list').empty();
   $('#expanded-results').empty();
-  //$('#js-error-message').addClass('hidden');
+  $('#js-error-message').empty();
   responseJson.drinks.forEach((drinks) => {
   $('#results-list').append(
     `<ul>
@@ -43,12 +43,13 @@ function displayResults(responseJson) {
         <img src="${drinks.strDrinkThumb}" class="results-img">
         <p>Category: ${drinks.strCategory}</p>
         <p>Instructions: ${drinks.strInstructions}</p>
-      <p>Ingredients: </p>
+      <p>Ingredients: </p>` 
+      responseJson.drinks.forEach((drinks.strIngredient) => {
       <ul>
-        <li>${drinks.strIngredient1}</li>
-        <li>${drinks.strIngredient2}</li>
-        <li>${drinks.strIngredient3}</li>
-        <li>${drinks.strIngredient4}</li>
+        <li>${drinks.strIngredient1} - ${drinks.strMeasure1}</li>
+        <li>${drinks.strIngredient2} - ${drinks.strMeasure2}</li>
+        <li>${drinks.strIngredient3} - ${drinks.strMeasure3}</li>
+        <li>${drinks.strIngredient4} - ${drinks.strMeasure4}</li>
       </ul>
     </ul>`
    )

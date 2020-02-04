@@ -28,6 +28,7 @@ function displayResults(responseJson) {
   console.log(responseJson);
   $('#results-list').empty();
   $('#expanded-results').empty();
+  $('#js-error-message').empty();
   responseJson.meals.forEach((meals) => {
   $('#results-list').append(
     `<ul>
