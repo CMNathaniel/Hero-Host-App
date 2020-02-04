@@ -39,15 +39,16 @@ function displayResults(responseJson) {
    )
   $('#expanded-results').append(
     `<ul>
-        <h3>${drinks.strDrink}</h3>
-        <img src="${drinks.strDrinkThumb}" class="results-img">
-        <p>Category: ${drinks.strCategory}</p>
-        <p>Ingredients: </p> 
-          <ul>`
-          responseJson.drinks.forEach((drinks.strIngredient, drinks.StrMeasure) =>
-          `<li>${drinks.strIngredient[i]} - ${drinks.strMeasure[i]}</li>
+        <li><h3>${drinks.strDrink}</h3></li>
+        <li><img src="${drinks.strDrinkThumb}" class="results-img"></li>
+        <li><p>Category: ${drinks.strCategory}</p></li>
+        <li><p>Ingredients: </p>`
+          responseJson.drinks.forEach((drinks.strIngredient, drinks.strMeasure) =>
+          `<ul>
+            <li>${drinks.strIngredient[i]} - ${drinks.strMeasure[i]}</li>
           </ul>
-        <p>Instructions: ${drinks.strInstructions}</p>
+        </li>
+      <li><p>Instructions: ${drinks.strInstructions}</p></li>
     </ul>`
    )
   });
