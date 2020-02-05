@@ -11,7 +11,7 @@ function getRecipe(category) {
     })
     .then(responseJson => displayResults(responseJson))
     .catch(err => {
-      $('#js-error-message').text(`Something went wrong, please try another search`);
+      $('#js-error-message').text(`ERROR: Something went wrong, please try another search`);
     });
 }
 
@@ -25,7 +25,6 @@ function watchForm() {
 }  
 
 function displayResults(responseJson) {
-  console.log(responseJson);
   $('#results-list').empty();
   $('#expanded-results').empty();
   $('#js-error-message').empty();
@@ -42,9 +41,9 @@ function displayResults(responseJson) {
         <li><h3>${drinks.strDrink}</h3></li>
         <li><img src="${drinks.strDrinkThumb}" class="results-img"></li>
         <li><p>Category: ${drinks.strCategory}</p></li>
-        <li><p>Ingredients: </p>`
+        <li><p>Ingredients: </p>
           responseJson.drinks.forEach((drinks.strIngredient, drinks.strMeasure) =>
-          `<ul>
+          <ul>
             <li>${drinks.strIngredient[i]} - ${drinks.strMeasure[i]}</li>
           </ul>
         </li>
@@ -69,7 +68,6 @@ function expandResults() {
     y.className = "hidden";
   }
 }
-
 
 $(function() {
 console.log('App loaded! Waiting for submit!');

@@ -10,32 +10,28 @@
     <link href="https://fonts.googleapis.com/css?family=Biryani|Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="menu">
-        <h1>The Hero Host</h1>
+    <nav class="nav">
+        <h1>The Hero Host</h1><img src="./cooking_man_chef.png" alt="cartoon chef" width="150" height="150" align="bottom">
+        <p><a href="meals.html">Go to Meal Recipes</a></p>
     </nav>
-    <div class="container">
-    <div id="cartoon">
     </div>
-
-        <div class="search-area">
-            <p><a href="meals.html">Go to Meal Recipes</a></p>
+        <div class="container">
             <h1>Cocktail Recipe Finder</h1>
             <form id="js-form">
                 <label for="search-term">Search for a cocktail recipe name!</label>
                 <input type="text" value="margarita" name="search-term" id="js-search-term" required>
                 <br>
-                <button input type="submit" class="button">Find my recipes!</button>
+                <button input type="submit" class="search-button">Find my recipes!</button>
             </form>
             <p id="js-error-message" class="error-message"></p>
             <section id="results" class="hidden">
                 <h2>Cocktail Recipe Results</h2>
-                <button class="button" onclick="expandResults()">Expand/Collapse All Results</button>
+                <button class="search-button" onclick="expandResults()">Expand/Collapse All Results</button>
                 <ul id="expanded-results" class="hidden"></ul>
                 <ul id="results-list"></ul>
             </section>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="cocktails.js"></script>
 </body>

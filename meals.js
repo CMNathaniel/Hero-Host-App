@@ -11,7 +11,7 @@ function getRecipe(category) {
     })
     .then(responseJson => displayResults(responseJson))
     .catch(err => {
-      $('#js-error-message').text(`Something went wrong, please try another search`);
+      $('#js-error-message').text(`ERROR: Something went wrong, please try another search`);
     });
 }
 
@@ -31,25 +31,23 @@ function displayResults(responseJson) {
   responseJson.meals.forEach((meals) => {
   $('#results-list').append(
     `<ul>
-      <h3><a href="${meals.strSource}" target="_blank">${meals.strMeal}</a></h3>
-      <img src="${meals.strMealThumb}" class="results-img">
-      <p>Region: ${meals.strArea}</p>
-      <p>Category: ${meals.strCategory}</p>
+      <li><h3>${meals.strMeal}</h3></li>
+      <li><a href="${meals.strSource}" target="_blank"><img src="${meals.strMealThumb}" class="results-img"></a></li>
     </ul>`
    )
   $('#expanded-results').append(
     `<ul>
-      <h3><a href="${meals.strSource}" target="_blank">${meals.strMeal}</a></h3>
-      <img src="${meals.strMealThumb}" class="results-img">
-      <p>Region: ${meals.strArea}</p>
-      <p>Category: ${meals.strCategory}</p>
-      <p>Ingredients: </p>
-      <ul>`
-        responseJson.meals.forEach((meals.strIngredient, meals.strMeasure) =>
-        `<li>${meals.strIngredient} - ${meals.strMeasure}</li>
+        <li><h3>${meals.strMeal}</h3></li>
+        <li><a href="${meals.strSource}" target="_blank"><img src="${meals.strMealThumb}" class="results-img"></a></li>
+        <li><p><a href="${meals.strYoutube}" target="_blank">Watch a how-to video</a></p>
+        <li><p>Region: ${meals.strArea}</p></li>
+        <li><p>Category: ${meals.strCategory}</p></li>
+        <li><p>Ingredients: </p>
+      <ul>
+        <li>${meals.strIngredient} - ${meals.strMeasure}</li>
       </ul>
-      <p>Instructions: ${meals.strInstructions}</p>
-      <p><a href="${meals.strYoutube}" target="_blank">Watch a how-to video</a></p>
+    </li>
+       <li><p>Instructions: ${meals.strInstructions}</p>
     </ul>`
    )
   });
@@ -75,3 +73,6 @@ $(function() {
   console.log('App loaded! Waiting for submit!');
   watchForm();
 });
+
+
+//       responseJson.meals.forEach((meals.strIngredient, meals.strMeasure) =>
