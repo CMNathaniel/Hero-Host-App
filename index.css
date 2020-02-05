@@ -9,16 +9,26 @@ body {
 }
 
 .nav {
+  background-image: url("./food_pattern.jpg");
+  background-repeat: repeat-x;
+  height: 200px; 
+  background-position: center;
   font-family: 'Biryani', sans-serif;
   color: #09B342;
   vertical-align: middle;
-  font-size: 35px;
+  font-size: 50px;
   text-align: center;
   align-items: center;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
 }
 
 .nav p {
   font-size: 18px;
+  text-shadow: none;
 }
 
 h1, h2, h3 {

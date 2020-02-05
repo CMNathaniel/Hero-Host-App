@@ -11,17 +11,18 @@
 </head>
 <body>
     <nav class="nav">
-        <h1>The Hero Host</h1><img src="./cooking_man_chef.png" alt="cartoon chef" width="150" height="150" align="bottom">
-        <p><a href="meals.html">Go to Meal Recipes</a></p>
+        <h1>The Hero Host</h1>
+        
     </nav>
     </div>
         <div class="container">
-            <h1>Cocktail Recipe Finder</h1>
+            <p><a href="meals.html">Go to Meal Recipes</a></p>
+            <h2>Cocktail Recipe Finder</h2>
             <form id="js-form">
-                <label for="search-term">Search for a cocktail recipe name!</label>
+                <label id="search-term">Search for a cocktail recipe name!</label>
                 <input type="text" value="margarita" name="search-term" id="js-search-term" required>
                 <br>
-                <button input type="submit" class="search-button">Find my recipes!</button>
+                <button type="submit" class="search-button">Find my recipes!</button>
             </form>
             <p id="js-error-message" class="error-message"></p>
             <section id="results" class="hidden">
