@@ -24,9 +24,9 @@ h1, h2, h3 {
 
 .container {
   margin-left: 3%;
-  margin-right: 2%;
+  margin-right: 3%;
   padding-left: 8%;
-  padding-right: 10%;
+  padding-right: 8%;
   text-align: left;
   align-items: center;
   vertical-align: middle;
@@ -47,7 +47,7 @@ h1, h2, h3 {
 }
 
 .landing-page img {
-  max-width:500px;
+  max-width:300px;
   padding: 20px;
   border-radius: 40px;
 }
@@ -86,63 +86,3 @@ ul {
 a:link, a:visited, a:hover, a:active {
   color: #47bb02;
 }
-
-
-/*
-
-
-/* #cartoon {
-  background-image: url(./cooking_man_chef.png);
-  background-repeat: no-repeat; 
-  width: 600px;
-  height: 200px;
-}
-
-@media screen and (min-width: 520px) {
-  .menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .menu > .item {
-    flex: 1 1 50px;
-    border: none;
-  }
-  
-  .menu > .item > input {
-    width: 90%;
-  }
-  
-  .menu > .name {
-    flex: 0 0 120px;
-  }
-  
-  .menu > .logo {
-    flex: 0 0 35px;
-  }
-}
-
-.landing-page button {
-  border: 4px;
-  border-color: black;
-  margin: 4px 2px;
-  padding: 15px 32px;
-  font-size: 16px;
-  cursor: pointer;
-  display: inline-block;
-  background-color: inherit;
-  text-align: center;
-  text-decoration: none;
-}
-
-  text-shadow:
-    -4px -4px 0 #000,
-    4px -4px 0 #000,
-    -4px 4px 0 #000,
-    4px 4px 0 #000;
-
-    background-image: url("./food_pattern.jpg");
-
-*/

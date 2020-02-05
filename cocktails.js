@@ -1,5 +1,6 @@
 'use strict';
 
+//fetches recipe list based on user search 
 function getRecipe(category) {
   console.log(category);
   fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+category)
@@ -15,6 +16,7 @@ function getRecipe(category) {
     });
 }
 
+//watches for search from user 
 function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
@@ -28,6 +30,7 @@ function displayResults(responseJson) {
   $('#results-list').empty();
   $('#expanded-results').empty();
   $('#js-error-message').empty();
+  //display initial or collapsed results 
   responseJson.drinks.forEach((drinks) => {
   $('#results-list').append(
     `<ul>
@@ -36,6 +39,7 @@ function displayResults(responseJson) {
       <p>Category: ${drinks.strCategory}</p>
     </ul>`
    )
+  // display expanded results that contains additional detail 
   $('#expanded-results').append(
     `<ul>
         <li><h3>${drinks.strDrink}</h3></li>
@@ -54,6 +58,7 @@ function displayResults(responseJson) {
  $('#results').removeClass('hidden');
 }
 
+//handles the button to expand and collapse all results 
 function expandResults() {
   var x = document.getElementById("expanded-results");
   if (x.className === "hidden") {
