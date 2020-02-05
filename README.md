@@ -16,7 +16,7 @@ About:
 
 ## Demo
 
-- [Live Demo](https://github.com/CMNathaniel/Hero-Host-App
+- [Live Demo](https://cmnathaniel.github.io/Hero-Host-App/
 )
 
 ## Technology Used 
