@@ -1,27 +1,18 @@
-The Hero Host App
+# Summary
 
-<!-- 
+This is an app for people that have the desire to be a better host for their friends and family. Often people want to improve their hosting skills, especially in the kitchen, but are intimiated or don't know where to begin. 
 
-## The Hero Host App 
+This app makes it easy and exciting for users to browse and select recipes for more main course meals and cocktails. The user will delight their guests with their kitchen creations and become a Hero Host after using this app. 
 
-An app for people to learn how to host so they can create recipes more easily
+# Screenshots
+Landing Page:
 
-## Screenshots
-Login Screen/Landing Page:
-
-![login screen](screenshots/login.png)
+![landing page](screenshots/landingpage_screenshot.png)
 
 About:
 
 ![about](screenshots/about.png)
 
-Library:
-
-![library](screenshots/library.png)
-
-Recommendations:
-
-![recommendations](screenshots/recommendations.png)
 
 ## Demo
 
@@ -30,15 +21,14 @@ Recommendations:
 
 ## Technology Used 
 
-HTML
-CSS
-Javascript
-Jquery
-APIs 
+* HTML
+* CSS
+* Javascript
+* Jquery
+* APIs 
 
-## Features
+## Features: Meals and Cocktails 
 
-* Create a list of books
-* Add your favorite books
-* Like lists to get recommendations
-* See every book currently in the library
+* Search for recipes based on name 
+* Click to see original source and how-to video
+* Expand results for additional informational such as ingredients and instructions 
