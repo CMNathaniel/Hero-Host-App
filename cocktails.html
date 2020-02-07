@@ -18,11 +18,13 @@
         <div class="container">
             <p><a href="meals.html">Go to Meal Recipes</a></p>
             <h2>Cocktail Recipe Finder</h2>
+            <button class="search-button" onclick="getRandomRecipe()">Surprise me!</button>
             <form id="js-form">
-                <label id="search-term">Search for a cocktail recipe name!</label>
+                <br>
+                <label id="search-term">Search for a cocktail recipe name</label>
                 <input type="text" value="margarita" name="search-term" id="js-search-term" required>
                 <br>
-                <button type="submit" class="search-button">Find my recipes!</button>
+                <button type="submit" class="search-button">Find my recipes</button>
             </form>
             <p id="js-error-message" class="error-message"></p>
             <section id="results" class="hidden">

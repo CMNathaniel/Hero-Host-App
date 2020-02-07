@@ -1,8 +1,35 @@
  'use strict';
 
-//fetches recipe list based on user search 
+// When user clicks surprise me button, 1 random meal will be displayed
+function getRandomRecipe() {
+  $('#results-list').empty();
+  $('#expanded-results').empty();
+  $('#js-error-message').empty();
+  fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+    .then(response => { 
+      if (response.ok) {
+        return response.json()
+      }
+      throw new Error(response.status)
+    })
+    .then(responseJson => displayResults(responseJson))
+    .catch(err => {
+      $('#js-error-message').text(`ERROR: Something went wrong, please try another search`);
+  });
+}
+
+// Watches for the random recipe button to be clicked
+//function watchRandomRecipe() {
+//  $('#random-recipe').submit(event => {
+//    event.preventDefault();
+//    console.log('watch random recipe function has run');
+//    getRandomRecipe();
+//  });
+//} 
+
+// Fetches recipe list based on user search 
 function getRecipe(category) {
-  console.log(category);
+  console.log('get recipe function has run, search term was ' +category);
   fetch('https://www.themealdb.com/api/json/v1/1/search.php?s='+category)
     .then(response => { 
       if (response.ok) {
@@ -16,12 +43,12 @@ function getRecipe(category) {
     });
 }
 
-//watches for search from user 
+// Watches for search term from user 
 function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
     var category = $('input[type="text"]').val();
-    console.log(category);
+    console.log('watch form function has run, search term was '+category);
     getRecipe(category.toLowerCase());
   });
 }  
@@ -30,19 +57,19 @@ function displayResults(responseJson) {
   $('#results-list').empty();
   $('#expanded-results').empty();
   $('#js-error-message').empty();
-  //display initial or collapsed results 
+  // display initial or collapsed results 
   responseJson.meals.forEach((meals) => {
   $('#results-list').append(
     `<ul>
       <li><h3>${meals.strMeal}</h3></li>
-      <li><a href="${meals.strSource}" target="_blank"><img src="${meals.strMealThumb}" class="results-img"></a></li>
+      <li><a href="${meals.strSource}" target="_blank"><img src="${meals.strMealThumb}" class="results-img" alt="${meals.strMeal}"></a></li>
     </ul>`
    )
-  // display expanded results that contains additional detail 
+  // display expanded results that contains additional details 
   $('#expanded-results').append(
     `<ul>
         <li><h3>${meals.strMeal}</h3></li>
-        <li><a href="${meals.strSource}" target="_blank"><img src="${meals.strMealThumb}" class="results-img"></a></li>
+        <li><a href="${meals.strSource}" target="_blank"><img src="${meals.strMealThumb}" class="results-img" alt="${meals.strMeal}"></a></li>
         <li><p><a href="${meals.strYoutube}" target="_blank">Watch a how-to video</a></p>
         <li><p>Region: ${meals.strArea}</p></li>
         <li><p>Category: ${meals.strCategory}</p></li>
@@ -64,7 +91,9 @@ function displayResults(responseJson) {
             <li>${meals.strIngredient14} - ${meals.strMeasure14}</li>
             <li>${meals.strIngredient15} - ${meals.strMeasure15}</li>
         </ul></li>
-        <li><p>Instructions: ${meals.strInstructions}</p></li>
+        <li><p>Instructions: 
+        <br>
+        <br>${meals.strInstructions}</p></li>
     </ul>`
    )
   });
