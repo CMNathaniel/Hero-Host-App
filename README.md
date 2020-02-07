@@ -10,11 +10,13 @@ Landing Page:
 ![landing page](https://github.com/CMNathaniel/Hero-Host-App/blob/master/landingpage_screenshot.png)
 
 
-![Alt text](http://full/path/to/img.jpg "Optional title")
+Meal Recipes - Initial Results:
 
-About:
+![Meal Recipes - Initial Results](https://github.com/CMNathaniel/Hero-Host-App/blob/master/landingpage_screenshot.png)
 
-![about](screenshots/about.png)
+
+Meal Recipes - Expanded Results: 
+![Meal Recipes - Expanded Results](https://github.com/CMNathaniel/Hero-Host-App/blob/master/landingpage_screenshot.png)
 
 
 ## Demo
