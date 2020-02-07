@@ -7,7 +7,7 @@ This app makes it easy and exciting for users to browse and select recipes for m
 # Screenshots
 Landing Page:
 
-![landing page]("./landingpage_screenshot.png")
+![landing page](https://github.com/CMNathaniel/Hero-Host-App/blob/master/landingpage_screenshot.png)
 
 
 ![Alt text](http://full/path/to/img.jpg "Optional title")
