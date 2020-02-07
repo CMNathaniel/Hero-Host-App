@@ -12,17 +12,16 @@ Landing Page:
 
 Meal Recipes - Initial Results:
 
-![Meal Recipes - Initial Results](https://github.com/CMNathaniel/Hero-Host-App/blob/master/landingpage_screenshot.png)
+![Meal Recipes - Initial Results](https://github.com/CMNathaniel/Hero-Host-App/blob/master/meal_result_screenshot.png)
 
 
 Meal Recipes - Expanded Results: 
-![Meal Recipes - Expanded Results](https://github.com/CMNathaniel/Hero-Host-App/blob/master/landingpage_screenshot.png)
+![Meal Recipes - Expanded Results](https://github.com/CMNathaniel/Hero-Host-App/blob/master/meals_expanded_results.png)
 
 
 ## Demo
 
-- [Live Demo](https://cmnathaniel.github.io/Hero-Host-App/
-)
+- [Live Demo](https://cmnathaniel.github.io/Hero-Host-App/)
 
 ## Technology Used 
 
@@ -35,5 +34,6 @@ Meal Recipes - Expanded Results:
 ## Features: Meals and Cocktails 
 
 * Search for recipes based on name 
+* Get surprised with a randomly generated recipe 
 * Click to see original source and how-to video
 * Expand results for additional informational such as ingredients and instructions 
