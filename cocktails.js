@@ -24,6 +24,7 @@ function getRecipe(category) {
         return response.json()
       }
       throw new Error(response.status)
+      
     })
     .then(responseJson => displayResults(responseJson))
     .catch(err => {
@@ -59,40 +60,41 @@ function displayResults(responseJson) {
         <li><img src="${drinks.strDrinkThumb}" class="results-img" alt="${drinks.strDrink}"></li>
         <li><p>Type of Glass: ${drinks.strGlass}</p></li>
         <li><p>Category: ${drinks.strCategory}</p></li>
-        <li><p>Instructions: 
-        <br>
-        <br>${drinks.strInstructions}</p></li>
+        <li><p>Instructions: ${drinks.strInstructions}</p></li>
         <li class="ingredients"><p>Ingredients: </p></li>
     </ul>`
    )
- $(displayIngredients);
- $('#results').removeClass('hidden');
+  //displayIngredients(responseJson);
+  $('#results').removeClass('hidden');
   })
 };
 
 //Displays ingredients and measurements, ignoring any 'null' results
 function displayIngredients(drinks) {
+//console.log("displayIngredients function has run");
   
-  var allIngredients = [drinks.strIngredient1, drinks.strIngredient2, drinks.strIngredient3, drinks.strIngredient4, drinks.strIngredient5, 
-    drinks.strIngredient6, drinks.strIngredient7, drinks.strIngredient8, drinks.strIngredient9, drinks.strIngredient10, drinks.strIngredient11,
-    drinks.strIngredient12, drinks.strIngredient13, drinks.strIngredient14, drinks.strIngredient15]
-
-  var allMeasurements = [drinks.strMeasure1, drinks.strMeasure2, drinks.strMeasure3, drinks.strMeasure4, drinks.strMeasure5, drinks.strMeasure6,
-     drinks.strMeasure7, drinks.strMeasure8, drinks.strMeasure9, drinks.strMeasure10, drinks.strMeasure11, drinks.strMeasure12, drinks.strMeasure13, 
-     drinks.strMeasure14, drinks.strMeasure15]
+    var allIngredients = [drinks.drink[0].strIngredient1, drinks.drink[0].strIngredient2, drinks.drink[0].strIngredient3, drinks.drink[0].strIngredient4, drinks.drink[0].strIngredient5, 
+      drinks.drink[0].strIngredient6, drinks.drink[0].strIngredient7, drinks.drink[0].strIngredient8, drinks.drink[0].strIngredient9, drinks.drink[0].strIngredient10, drinks.drink[0].strIngredient11,
+      drinks.drink[0].strIngredient12, drinks.drink[0].strIngredient13, drinks.drink[0].strIngredient14, drinks.drink[0].strIngredient15] 
   
-   var filteredIngredients = allIngredients.filter(ingredients => ingredients != null);
-   var filteredMeasurements = allMeasurements.filter(ingredients => ingredients != null);
-
-
-  filteredIngredients.forEach(x => {
-    $('.ingredients').append(
-       `<ul>
-          <li>${x} - ${filteredMeasurements[x]}
-      </ul>`
-        )
-    }) 
-  }
+    var allIngredients = [];
+    for (let i=1; i<=15; i++) {
+      allIngredients.push(drinks.drink[0]['strIngredient'+i]);
+    }
+  
+    var allMeasurements = [drinks.drink[0].strMeasure1, drinks.drink[0].strMeasure2, drinks.drink[0].strMeasure3, drinks.drink[0].strMeasure4, drinks.drink[0].strMeasure5, drinks.drink[0].strMeasure6, drinks.drink[0].strMeasure7, drinks.drink[0].strMeasure8, drinks.drink[0].strMeasure9, drinks.drink[0].strMeasure10, drinks.drink[0].strMeasure11, drinks.drink[0].strMeasure12, drinks.drink[0].strMeasure13, drinks.drink[0].strMeasure14, drinks.drink[0].strMeasure15]
+    
+    var filteredIngredients = allIngredients.filter(ingredients => ingredients != null);
+    var filteredMeasurements = allMeasurements.filter(ingredients => ingredients != null);
+  
+    filteredIngredients.forEach(x => {
+      $('.ingredients').append(
+         `<ul>
+            <li>${x} - ${filteredMeasurements[x]}
+        </ul>`
+          )
+      }) 
+    }
 
 // Handles the button to expand and collapse all results 
 function expandResults() {
