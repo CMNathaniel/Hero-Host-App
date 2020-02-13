@@ -1,6 +1,6 @@
 'use strict';
 
-// When user clicks surprise me button, 1 random meal will be displayed
+// When user clicks surprise me button, 1 random recipe will be displayed
 function getRandomRecipe() {
   fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
     .then(response => { 
@@ -71,19 +71,24 @@ function displayResults(responseJson) {
 
 //Displays ingredients and measurements, ignoring any 'null' results
 function displayIngredients(drinks) {
-//console.log("displayIngredients function has run");
+  //console.log(drinks);
   
-    var allIngredients = [drinks.drink[0].strIngredient1, drinks.drink[0].strIngredient2, drinks.drink[0].strIngredient3, drinks.drink[0].strIngredient4, drinks.drink[0].strIngredient5, 
-      drinks.drink[0].strIngredient6, drinks.drink[0].strIngredient7, drinks.drink[0].strIngredient8, drinks.drink[0].strIngredient9, drinks.drink[0].strIngredient10, drinks.drink[0].strIngredient11,
-      drinks.drink[0].strIngredient12, drinks.drink[0].strIngredient13, drinks.drink[0].strIngredient14, drinks.drink[0].strIngredient15] 
+    var allIngredients = [drinks.drinks[0].strIngredient1, drinks.drinks[0].strIngredient2, drinks.drinks[0].strIngredient3, drinks.drinks[0].strIngredient4, drinks.drinks[0].strIngredient5, 
+      drinks.drinks[0].strIngredient6, drinks.drinks[0].strIngredient7, drinks.drinks[0].strIngredient8, drinks.drinks[0].strIngredient9, drinks.drinks[0].strIngredient10, drinks.drinks[0].strIngredient11,
+      drinks.drinks[0].strIngredient12, drinks.drinks[0].strIngredient13, drinks.drinks[0].strIngredient14, drinks.drinks[0].strIngredient15] 
   
     var allIngredients = [];
     for (let i=1; i<=15; i++) {
-      allIngredients.push(drinks.drink[0]['strIngredient'+i]);
+      allIngredients.push(drinks.drinks[0]['strIngredient'+i]);
     }
   
-    var allMeasurements = [drinks.drink[0].strMeasure1, drinks.drink[0].strMeasure2, drinks.drink[0].strMeasure3, drinks.drink[0].strMeasure4, drinks.drink[0].strMeasure5, drinks.drink[0].strMeasure6, drinks.drink[0].strMeasure7, drinks.drink[0].strMeasure8, drinks.drink[0].strMeasure9, drinks.drink[0].strMeasure10, drinks.drink[0].strMeasure11, drinks.drink[0].strMeasure12, drinks.drink[0].strMeasure13, drinks.drink[0].strMeasure14, drinks.drink[0].strMeasure15]
+    var allMeasurements = [drinks.drinks[0].strMeasure1, drinks.drinks[0].strMeasure2, drinks.drinks[0].strMeasure3, drinks.drinks[0].strMeasure4, drinks.drinks[0].strMeasure5, drinks.drinks[0].strMeasure6, drinks.drinks[0].strMeasure7, drinks.drinks[0].strMeasure8, drink.drinks[0].strMeasure9, drinks.drinks[0].strMeasure10, drinks.drinks[0].strMeasure11, drinks.drinks[0].strMeasure12, drinks.drinks[0].strMeasure13, drinks.drinks[0].strMeasure14, drinks.drinks[0].strMeasure15]
     
+    var allMeasurements = [];
+    for (let i=1; i<=15; i++) {
+      allMeasurements.push(drinks.drinks[0]['strMeasure'+i]);
+    }
+
     var filteredIngredients = allIngredients.filter(ingredients => ingredients != null);
     var filteredMeasurements = allMeasurements.filter(ingredients => ingredients != null);
   
@@ -94,7 +99,7 @@ function displayIngredients(drinks) {
         </ul>`
           )
       }) 
-    }
+  }
 
 // Handles the button to expand and collapse all results 
 function expandResults() {
