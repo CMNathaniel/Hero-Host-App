@@ -73,24 +73,15 @@ function displayResults(responseJson) {
         <li><p><a href="${meals.strYoutube}" target="_blank">Watch a how-to video</a></p>
         <li><p>Region: ${meals.strArea}</p></li>
         <li><p>Category: ${meals.strCategory}</p></li>
-        <li><p>Ingredients: </p>
-          <ul>
+        <li id="ingredients"><p>Ingredients Preview: </p>
+          <ol>
             <li>${meals.strIngredient1} - ${meals.strMeasure1}</li>
             <li>${meals.strIngredient2} - ${meals.strMeasure2}</li>
             <li>${meals.strIngredient3} - ${meals.strMeasure3}</li>
             <li>${meals.strIngredient4} - ${meals.strMeasure4}</li>
             <li>${meals.strIngredient5} - ${meals.strMeasure5}</li>
             <li>${meals.strIngredient6} - ${meals.strMeasure6}</li>
-            <li>${meals.strIngredient7} - ${meals.strMeasure7}</li>
-            <li>${meals.strIngredient8} - ${meals.strMeasure8}</li>
-            <li>${meals.strIngredient9} - ${meals.strMeasure9}</li>
-            <li>${meals.strIngredient10} - ${meals.strMeasure10}</li>
-            <li>${meals.strIngredient11} - ${meals.strMeasure11}</li>
-            <li>${meals.strIngredient12} - ${meals.strMeasure12}</li>
-            <li>${meals.strIngredient13} - ${meals.strMeasure13}</li>
-            <li>${meals.strIngredient14} - ${meals.strMeasure14}</li>
-            <li>${meals.strIngredient15} - ${meals.strMeasure15}</li>
-        </ul></li>
+        </ol></li>
         <li><p>Instructions: 
         <br>
         <br>${meals.strInstructions}</p></li>

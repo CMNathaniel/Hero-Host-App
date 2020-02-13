@@ -53,7 +53,7 @@ function displayResults(responseJson) {
       <li><h3>${drinks.strDrink}</h3></li>
       <li><img src="${drinks.strDrinkThumb}" class="results-img" alt="${drinks.strDrink}"></li>
     </ul>`
-   )
+    )
   // Display expanded results that contain additional details 
   $('#expanded-results').append(
     `<ul>
@@ -62,47 +62,20 @@ function displayResults(responseJson) {
         <li><p>Type of Glass: ${drinks.strGlass}</p></li>
         <li><p>Category: ${drinks.strCategory}</p></li>
         <li><p>Instructions: ${drinks.strInstructions}</p></li>
-        <li class="ingredients"><p>Ingredients: </p></li>
+        <li id="ingredients"><p>Ingredients Preview: </p>
+          <ol>
+            <li>${drinks.strIngredient1} - ${drinks.strMeasure1}</li>
+            <li>${drinks.strIngredient2} - ${drinks.strMeasure2}</li>
+            <li>${drinks.strIngredient3} - ${drinks.strMeasure3}</li>
+            <li>${drinks.strIngredient4} - ${drinks.strMeasure4}</li>
+          </ol></li>
     </ul>`
-   )
-  displayIngredients(responseJson);
+    )
   $('#results').removeClass('hidden');
   })
 };
 
-//Displays ingredients and measurements, ignoring any 'null' results
-function displayIngredients(drinks) {
-  console.log("displayIngredients has run");
-  
-    var allIngredients = [drinks.drinks[0].strIngredient1, drinks.drinks[0].strIngredient2, drinks.drinks[0].strIngredient3, drinks.drinks[0].strIngredient4, drinks.drinks[0].strIngredient5, 
-      drinks.drinks[0].strIngredient6, drinks.drinks[0].strIngredient7, drinks.drinks[0].strIngredient8, drinks.drinks[0].strIngredient9, drinks.drinks[0].strIngredient10, drinks.drinks[0].strIngredient11,
-      drinks.drinks[0].strIngredient12, drinks.drinks[0].strIngredient13, drinks.drinks[0].strIngredient14, drinks.drinks[0].strIngredient15] 
-  
-    var allIngredients = [];
-    for (let i=1; i<=15; i++) {
-      allIngredients.push(drinks.drinks[0]['strIngredient'+i]);
-    }
-  
-    var allMeasurements = [drinks.drinks[0].strMeasure1, drinks.drinks[0].strMeasure2, drinks.drinks[0].strMeasure3, drinks.drinks[0].strMeasure4, drinks.drinks[0].strMeasure5, drinks.drinks[0].strMeasure6, drinks.drinks[0].strMeasure7, drinks.drinks[0].strMeasure8, drink.drinks[0].strMeasure9, drinks.drinks[0].strMeasure10, drinks.drinks[0].strMeasure11, drinks.drinks[0].strMeasure12, drinks.drinks[0].strMeasure13, drinks.drinks[0].strMeasure14, drinks.drinks[0].strMeasure15]
-    
-    var allMeasurements = [];
-    for (let i=1; i<=15; i++) {
-      allMeasurements.push(drinks.drinks[0]['strMeasure'+i]);
-    }
-
-    var filteredIngredients = allIngredients.filter(ingredients => ingredients != null);
-    var filteredMeasurements = allMeasurements.filter(ingredients => ingredients != null);
-  
-  filteredIngredients.forEach(x => {
-    $('.ingredients').append(
-      `<ul>
-        <li>${x} - ${filteredMeasurements[x]}
-      </ul>`
-      )
-    }) 
-}
-
-// Handles the button to expand and collapse all results 
+//Handles the button to expand and collapse all results 
 function expandResults() {
   var x = document.getElementById("expanded-results");
   if (x.className === "hidden") {
@@ -121,4 +94,3 @@ function expandResults() {
 $(function() {
 watchForm();
 });
-
