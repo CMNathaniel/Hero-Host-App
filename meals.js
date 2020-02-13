@@ -18,15 +18,6 @@ function getRandomRecipe() {
   });
 }
 
-// Watches for the random recipe button to be clicked
-//function watchRandomRecipe() {
-//  $('#random-recipe').submit(event => {
-//    event.preventDefault();
-//    console.log('watch random recipe function has run');
-//    getRandomRecipe();
-//  });
-//} 
-
 // Fetches recipe list based on user search 
 function getRecipe(category) {
   console.log('get recipe function has run, search term was ' +category);
