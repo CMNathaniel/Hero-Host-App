@@ -2,6 +2,7 @@
 
 // When user clicks surprise me button, 1 random recipe will be displayed
 function getRandomRecipe() {
+  console.log("getRandomRecipe has run");
   fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
     .then(response => { 
       if (response.ok) {
@@ -17,7 +18,7 @@ function getRandomRecipe() {
 
 // Fetches recipe results list based on user search 
 function getRecipe(category) {
-  console.log(category);
+  console.log("getRecipe has run with " +category);
   fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+category)
     .then(response => {
       if (response.ok) {
@@ -64,14 +65,14 @@ function displayResults(responseJson) {
         <li class="ingredients"><p>Ingredients: </p></li>
     </ul>`
    )
-  //displayIngredients(responseJson);
+  displayIngredients(responseJson);
   $('#results').removeClass('hidden');
   })
 };
 
 //Displays ingredients and measurements, ignoring any 'null' results
 function displayIngredients(drinks) {
-  //console.log(drinks);
+  console.log("displayIngredients has run");
   
     var allIngredients = [drinks.drinks[0].strIngredient1, drinks.drinks[0].strIngredient2, drinks.drinks[0].strIngredient3, drinks.drinks[0].strIngredient4, drinks.drinks[0].strIngredient5, 
       drinks.drinks[0].strIngredient6, drinks.drinks[0].strIngredient7, drinks.drinks[0].strIngredient8, drinks.drinks[0].strIngredient9, drinks.drinks[0].strIngredient10, drinks.drinks[0].strIngredient11,
@@ -92,14 +93,14 @@ function displayIngredients(drinks) {
     var filteredIngredients = allIngredients.filter(ingredients => ingredients != null);
     var filteredMeasurements = allMeasurements.filter(ingredients => ingredients != null);
   
-    filteredIngredients.forEach(x => {
-      $('.ingredients').append(
-         `<ul>
-            <li>${x} - ${filteredMeasurements[x]}
-        </ul>`
-          )
-      }) 
-  }
+  filteredIngredients.forEach(x => {
+    $('.ingredients').append(
+      `<ul>
+        <li>${x} - ${filteredMeasurements[x]}
+      </ul>`
+      )
+    }) 
+}
 
 // Handles the button to expand and collapse all results 
 function expandResults() {
