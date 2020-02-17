@@ -2,13 +2,12 @@
 
 // When user clicks surprise me button, 1 random recipe will be displayed
 function getRandomRecipe() {
-  console.log("getRandomRecipe has run");
   fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
     .then(response => { 
       if (response.ok) {
-        return response.json()
+        return response.json();
       }
-      throw new Error(response.status)
+      throw new Error(response.status);
     })
     .then(responseJson => displayResults(responseJson))
     .catch(err => {
@@ -18,14 +17,12 @@ function getRandomRecipe() {
 
 // Fetches recipe results list based on user search 
 function getRecipe(category) {
-  console.log("getRecipe has run with " +category);
   fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+category)
     .then(response => {
       if (response.ok) {
         return response.json()
       }
-      throw new Error(response.status)
-      
+      throw new Error(response.status);
     })
     .then(responseJson => displayResults(responseJson))
     .catch(err => {
@@ -35,29 +32,28 @@ function getRecipe(category) {
 
 // Watches for search from user 
 function watchForm() {
-  $('form').submit(event => {
+  $("form").submit(event => {
     event.preventDefault();
-    var category = $('input[type="text"]').val();
+    var category = $("input[type='text']").val();
     getRecipe(category.toLowerCase());
   });
 }  
 
 // Display inital results 
 function displayResults(responseJson) {
-  $('#results-list').empty();
-  $('#expanded-results').empty();
-  $('#js-error-message').empty();
+  $("#results-list").empty();
+  $("#expanded-results").empty();
+  $("#js-error-message").empty();
   responseJson.drinks.forEach((drinks) => {
-  $('#results-list').append(
+  $("#results-list").append(
     `<ul>
       <li><h3>${drinks.strDrink}</h3></li>
       <li><img src="${drinks.strDrinkThumb}" class="results-img" alt="${drinks.strDrink}"></li>
     </ul>`
-    )
+      );
   // Display expanded results that contain additional details 
-  $('#expanded-results').append(
-    `<ul>
-        <li><h3>${drinks.strDrink}</h3></li>
+  $("#expanded-results").append(
+    `   <li><h3>${drinks.strDrink}</h3></li>
         <li><img src="${drinks.strDrinkThumb}" class="results-img" alt="${drinks.strDrink}"></li>
         <li><p>Type of Glass: ${drinks.strGlass}</p></li>
         <li><p>Category: ${drinks.strCategory}</p></li>
@@ -68,10 +64,9 @@ function displayResults(responseJson) {
             <li>${drinks.strIngredient2} - ${drinks.strMeasure2}</li>
             <li>${drinks.strIngredient3} - ${drinks.strMeasure3}</li>
             <li>${drinks.strIngredient4} - ${drinks.strMeasure4}</li>
-          </ol></li>
-    </ul>`
-    )
-  $('#results').removeClass('hidden');
+          </ol></li>`
+    );
+  $("#results").removeClass("hidden");
   })
 };
 

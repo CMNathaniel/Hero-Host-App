@@ -2,15 +2,12 @@
 
 // When user clicks surprise me button, 1 random meal will be displayed
 function getRandomRecipe() {
-  $('#results-list').empty();
-  $('#expanded-results').empty();
-  $('#js-error-message').empty();
   fetch('https://www.themealdb.com/api/json/v1/1/random.php')
     .then(response => { 
       if (response.ok) {
-        return response.json()
+        return response.json();
       }
-      throw new Error(response.status)
+      throw new Error(response.status);
     })
     .then(responseJson => displayResults(responseJson))
     .catch(err => {
@@ -20,13 +17,12 @@ function getRandomRecipe() {
 
 // Fetches recipe list based on user search 
 function getRecipe(category) {
-  console.log('get recipe function has run, search term was ' +category);
   fetch('https://www.themealdb.com/api/json/v1/1/search.php?s='+category)
     .then(response => { 
       if (response.ok) {
-        return response.json()
+        return response.json();
       }
-      throw new Error(response.status)
+      throw new Error(response.status);
     })
     .then(responseJson => displayResults(responseJson))
     .catch(err => {
@@ -36,28 +32,27 @@ function getRecipe(category) {
 
 // Watches for search term from user 
 function watchForm() {
-  $('form').submit(event => {
+  $("form").submit(event => {
     event.preventDefault();
-    var category = $('input[type="text"]').val();
-    console.log('watch form function has run, search term was '+category);
+    var category = $("input[type='text']").val();
     getRecipe(category.toLowerCase());
   });
 }  
 
 function displayResults(responseJson) {
-  $('#results-list').empty();
-  $('#expanded-results').empty();
-  $('#js-error-message').empty();
+  $("#results-list").empty();
+  $("#expanded-results").empty();
+  $("#js-error-message").empty();
   // display initial or collapsed results 
   responseJson.meals.forEach((meals) => {
-  $('#results-list').append(
+  $("#results-list").append(
     `<ul>
       <li><h3>${meals.strMeal}</h3></li>
       <li><a href="${meals.strSource}" target="_blank"><img src="${meals.strMealThumb}" class="results-img" alt="${meals.strMeal}"></a></li>
     </ul>`
-   )
+   );
   // display expanded results that contains additional details 
-  $('#expanded-results').append(
+  $("#expanded-results").append(
     `<ul>
         <li><h3>${meals.strMeal}</h3></li>
         <li><a href="${meals.strSource}" target="_blank"><img src="${meals.strMealThumb}" class="results-img" alt="${meals.strMeal}"></a></li>
@@ -77,9 +72,9 @@ function displayResults(responseJson) {
         <br>
         <br>${meals.strInstructions}</p></li>
     </ul>`
-   )
+   );
   });
- $('#results').removeClass('hidden');
+ $("#results").removeClass("hidden");
 }
 
 //handles the button to expand and collapse all results 
@@ -99,6 +94,5 @@ function expandResults() {
 }
 
 $(function() {
-  console.log('App loaded! Waiting for submit!');
   watchForm();
 });
