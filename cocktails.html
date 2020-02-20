@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cocktail Recipes</title>
-    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Biryani" rel="stylesheet">
@@ -18,26 +17,26 @@
     </header>
         <div class="container">
             <h2>Cocktail Recipe Finder</h2>
-            <button class="search-button" onclick="getRandomRecipe()">Surprise me!</button>
-            <form id="js-form">
+            <button class="search-button" onclick="getRandomCocktailRecipe()">Surprise me!</button>
+            <form id="cocktail-form">
                 <br>
                 <label for="cocktail-recipe">Search for a cocktail recipe name</label>
-                <input class="js-search-term" name="search-term" type="text" value="margarita" required/>
+                <input class="js-search-term" id="cocktail-search" name="search-term" type="text" value="margarita" required/>
                 <br>
                 <button type="submit" class="search-button">Find my recipes</button>
             </form>
-            <p id="js-error-message" class="error-message"></p>
-            <section id="results" class="hidden">
+            <p class="error-message"></p>
+            <section class="cocktail-results hidden">
                 <h2>Cocktail Recipe Results</h2>
                 <button class="search-button" onclick="expandResults()">Expand/Collapse All Results</button>
                 <div class="results-list-container">
-                    <ul id="expanded-results" class="hidden">
+                    <ul class="cocktail-expanded-results expanded-results hidden">
                         <li class="ingredients"></li></ul>
-                    <ul id="results-list"></ul></div>
+                    <ul class="cocktail-results-list results-list"></ul></div>
             </section>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="cocktails.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
