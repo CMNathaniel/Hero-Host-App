@@ -27,8 +27,8 @@
         </form>
         <p class="error-message"></p>
         <section class="meal-results hidden">
-          <h2>Meal Recipe Results</h2>
-          <div class="results-list-container">
+          <h2 class="mealRecipeResults">Meal Recipe Results</h2>
+          <div class="results-list-container hidden">
             <ul class="meal-expanded-results expanded-results hidden">
                 <li class="ingredients"></li></ul>
             <ul class="meal-results-list results-list"></ul></div>
@@ -36,6 +36,8 @@
     </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script>$( "h2.mealRecipeResults" ).click(function() {$( "results-list-container" ).slideToggle( "slow" );});
+    </script>
     <script src="script.js"></script> 
 </body>
 </html>
