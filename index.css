@@ -125,7 +125,7 @@ ul {
   border-radius: 20px;
 } 
 
-.collapsible {
+.collapsible-trigger {
   color: #ff0000;
   cursor: pointer;
   padding: 18px;
