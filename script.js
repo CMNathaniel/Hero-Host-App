@@ -86,13 +86,13 @@ function displayMealResults(responseJson) {
     responseJson.meals.forEach((meals) => {
     $(".meal-results-list").append(
       `<ul>
-        <li><h3>${meals.strMeal}</h3></li>
+        <li><h3><button type="button" class="collapsible">${meals.strMeal}</button></h3></li>
         <li><a href="${meals.strSource}" target="_blank"><img src="${meals.strMealThumb}" alt="${meals.strMeal}"></a></li>
       </ul>`
      );
     // display expanded results that contains additional details 
     $(".meal-expanded-results").append(
-      `<ul>
+      `<ul class="content">
           <li><h3>${meals.strMeal}</h3></li>
           <li><a href="${meals.strSource}" target="_blank"><img src="${meals.strMealThumb}" alt="${meals.strMeal}"></a></li>
           <li><p><a href="${meals.strYoutube}" target="_blank">Watch a how-to video</a></p>
@@ -110,6 +110,7 @@ function displayMealResults(responseJson) {
           <li><p>Instructions: 
           <br>
           <br>${meals.strInstructions}</p></li>
+          </div>
       </ul>`
      );
     });
@@ -124,13 +125,14 @@ function displayCocktailResults(responseJson) {
   responseJson.drinks.forEach((drinks) => {
   $(".cocktail-results-list").append(
     `<ul>
-      <li><h3>${drinks.strDrink}</h3></li>
+      <li><h3><button type="button" class="collapsible">${drinks.strDrink}</button></h3></li>
       <li><img src="${drinks.strDrinkThumb}" class="results-img" alt="${drinks.strDrink}"></li>
     </ul>`
       );
   // Display expanded cocktail recipe results that contain additional details 
   $(".cocktail-expanded-results").append(
-        `<li><h3>${drinks.strDrink}</h3></li>
+    `<ul class="content">
+        <li><h3>${drinks.strDrink}</h3></li>
         <li><img src="${drinks.strDrinkThumb}" class="results-img" alt="${drinks.strDrink}"></li>
         <li><p>Type of Glass: ${drinks.strGlass}</p></li>
         <li><p>Category: ${drinks.strCategory}</p></li>
@@ -141,14 +143,33 @@ function displayCocktailResults(responseJson) {
             <li>${drinks.strIngredient2} - ${drinks.strMeasure2}</li>
             <li>${drinks.strIngredient3} - ${drinks.strMeasure3}</li>
             <li>${drinks.strIngredient4} - ${drinks.strMeasure4}</li>
-          </ol></li>`
+          </ol></li>
+    </ul>`
     );
   $(".cocktail-results").removeClass("hidden");
   })
 };
 
-//Handles the buttons to expand and collapse all results 
 function expandResults() {
+    
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", expandResults); {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    };
+    console.log(`expandresults has run`);
+}}
+
+//Handles the buttons to expand and collapse all results 
+/*function expandResults() {
   var x = document.getElementsByClassName("expanded-results");
   if (x.className === "hidden") {
     x.className = "block";
@@ -161,9 +182,11 @@ function expandResults() {
   } else {
     y.className = "hidden";
   }
-}
+}   */
+
+
 
 $(function() {
 watchMealForm();
 watchCocktailForm();
-});
+}); 

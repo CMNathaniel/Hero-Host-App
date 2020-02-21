@@ -125,6 +125,27 @@ ul {
   border-radius: 20px;
 } 
 
+.collapsible {
+  color: #ff0000;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 22px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+}
+
 .error-message {
   color: black;
 }
