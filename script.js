@@ -2,7 +2,7 @@
 
 // When user clicks button, 1 random meal recipe will be displayed
 function getRandomMealRecipe() {
-    fetch("https://www.themealdb.com/api/json/v1/1/random.php")
+     fetch("https://www.themealdb.com/api/json/v1/1/random.php")
       .then(response => { 
         if (response.ok) {
           return response.json();
@@ -76,7 +76,7 @@ function watchCocktailForm() {
         var cocktailCategory = $("#cocktail-search").val();
         getCocktailRecipe(cocktailCategory.toLowerCase());
     });
-};  
+}  
 
 // Display inital cocktail recipe results 
 function displayCocktailResults(responseJson) {
@@ -147,7 +147,7 @@ function displayMealResults(responseJson) {
           );
         $(".meal-results").removeClass("hidden");
         })
-      };
+      }
 
 //Toggles between collapsed and expanded results for each recipe 
 function watchCollapsible() {
@@ -159,13 +159,13 @@ function watchCollapsible() {
       $(".meal-results-list").removeClass("hidden");
       $(".cocktail-results-list").removeClass("hidden");
     });
-  };
+  }
 
 $(function() {
     watchMealForm();
     watchCocktailForm();
     watchCollapsible();
-}); 
+}) 
 
 
 
