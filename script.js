@@ -13,7 +13,7 @@ function getRandomMealRecipe() {
       .catch(err => {
         $(".error-message").text(`ERROR: Something went wrong, please try another search`);
     });
-  }
+  };
 
 // When user clicks button, 1 random cocktail recipe will be displayed
 function getRandomCocktailRecipe() {
@@ -28,7 +28,7 @@ function getRandomCocktailRecipe() {
       .catch(err => {
         $(".error-message").text(`ERROR: Something went wrong, please try another search`);
     });
-  }
+  };
   
   // Fetches meal recipe results list based on user search 
 function getMealRecipe(mealCategory) {
@@ -43,7 +43,7 @@ function getMealRecipe(mealCategory) {
       .catch(err => {
         $(".error-message").text(`ERROR: Something went wrong, please try another search`);
       });
-  }
+  };
 
 // Fetches cocktail recipe results list based on user search 
 function getCocktailRecipe(cocktailCategory) {
@@ -58,7 +58,7 @@ function getCocktailRecipe(cocktailCategory) {
     .catch(err => {
       $(".error-message").text(`ERROR: Something went wrong, please try another search`);
     });
-}
+};
 
 // Watches for searches from user 
 function watchMealForm() {
@@ -67,7 +67,7 @@ function watchMealForm() {
         var mealCategory = $("#meal-search").val();
         getMealRecipe(mealCategory.toLowerCase());
     });
-}  
+};  
 
 function watchCocktailForm() {
     $("#cocktail-form").submit(event => {
@@ -75,7 +75,7 @@ function watchCocktailForm() {
         var cocktailCategory = $("#cocktail-search").val();
         getCocktailRecipe(cocktailCategory.toLowerCase());
     });
-}  
+};  
 
 // Display inital meal recipe results 
 function displayMealResults(responseJson) {
@@ -98,7 +98,7 @@ function displayMealResults(responseJson) {
           <li><p><a href="${meals.strYoutube}" target="_blank">Watch a how-to video</a></p>
           <li><p>Region: ${meals.strArea}</p></li>
           <li><p>Category: ${meals.strCategory}</p></li>
-          <li id="ingredients"><p>Ingredients Preview: </p>
+          <li class="meal-ingredients"><p>Ingredients Preview: </p>
             <ol>
               <li>${meals.strIngredient1} - ${meals.strMeasure1}</li>
               <li>${meals.strIngredient2} - ${meals.strMeasure2}</li>
@@ -115,7 +115,7 @@ function displayMealResults(responseJson) {
      );
     });
    $(".meal-results").removeClass("hidden");
-  }
+  };
 
 // Display inital cocktail recipe results 
 function displayCocktailResults(responseJson) {
@@ -124,38 +124,46 @@ function displayCocktailResults(responseJson) {
   $(".error-message").empty();
   responseJson.drinks.forEach((drinks) => {
   $(".cocktail-results-list").append(
-    `<ul>
-      <li><h3><button type="button" class="collapsible-trigger">${drinks.strDrink}</button></h3></li>
-      <li><img src="${drinks.strDrinkThumb}" class="results-img" alt="${drinks.strDrink}"></li>
-    </ul>`
-      );
-  // Display expanded cocktail recipe results that contain additional details 
-  $(".cocktail-expanded-results").append(
-    `<ul>
-        <li><h3>${drinks.strDrink}<button type="button" class="collapsible-trigger"></button></h3></li>
-        <li><img src="${drinks.strDrinkThumb}" class="results-img" alt="${drinks.strDrink}"></li>
-        <li><p>Type of Glass: ${drinks.strGlass}</p></li>
-        <li><p>Category: ${drinks.strCategory}</p></li>
-        <li><p>Instructions: ${drinks.strInstructions}</p></li>
-        <li id="ingredients"><p>Ingredients Preview: </p>
-          <ol>
-            <li>${drinks.strIngredient1} - ${drinks.strMeasure1}</li>
-            <li>${drinks.strIngredient2} - ${drinks.strMeasure2}</li>
-            <li>${drinks.strIngredient3} - ${drinks.strMeasure3}</li>
-            <li>${drinks.strIngredient4} - ${drinks.strMeasure4}</li>
-          </ol></li>
-    </ul>`
+    `<li class="result-item">
+    <header class="result-item-header">
+      <h3 role="button" class="collapsible-trigger">${drinks.strDrink}</h3>
+      <div>
+        <img src="${drinks.strDrinkThumb}" class="results-img" alt="${drinks.strDrink}"/>
+      </div>
+    </header>
+    
+    <div class="result-item-info" style="display: none">
+        <p>Type of Glass: ${drinks.strGlass}</p>
+        <p>Category: ${drinks.strCategory}</p>
+        <p>Instructions: ${drinks.strInstructions}</p>
+        <div class="result-item-ingredients" class="cocktail-ingredients">
+             <p>Ingredients Preview:</p>
+         <ol>
+             <li>${drinks.strIngredient1} - ${drinks.strMeasure1}</li>
+             <li>${drinks.strIngredient2} - ${drinks.strMeasure2}</li>
+             <li>${drinks.strIngredient3} - ${drinks.strMeasure3}</li>
+             <li>${drinks.strIngredient4} - ${drinks.strMeasure4}</li>
+        </ol>
+    </div>
+    </div>
+    </li>`
     );
   $(".cocktail-results").removeClass("hidden");
   })
 };
 
+//Toggles between intitial results and the expanded results for each recipe 
 function watchCollapsible() {
     $(document).on("click", ".collapsible-trigger", function () {
-    $(".cocktail-expanded-results").slideToggle("slow");
+    $(this) {
+        .closest(".result-item");
+        .find(".result-item-info");
+        .slideToggle("slow");
+    };
     $(".cocktail-results-list").toggleClass("hidden");
-    })
-}
+    $(".cocktail-results-list").toggle(display);
+    }); 
+};
 
 $(function() {
     watchMealForm();
@@ -163,51 +171,6 @@ $(function() {
     watchCollapsible();
 }); 
 
-/*function expandResults() {
-    $("h3.meal-results-list").click() {
-        $("meal-expanded-results").slideToggle("slow");
-    });
-}  */
-/*
-
-$(document).on("click", ".collapsible-trigger", function () {
-    $(".cocktail-expanded-results").slideToggle("slow"); 
-    
-   }) */
-
-/*function expandResults() {
-    
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", expandResults); {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
-    };
-    console.log(`expandresults has run`);
-}}
-
-//Handles the buttons to expand and collapse all results 
-/*function expandResults() {
-  var x = document.getElementsByClassName("expanded-results");
-  if (x.className === "hidden") {
-    x.className = "block";
-  } else {
-    x.className = "hidden";
-  }
-  var y = document.getElementsByClassName("results-list");
-  if (y.className === "hidden") {
-    y.className = "block";
-  } else {
-    y.className = "hidden";
-  }
-}   */
 
 
 
