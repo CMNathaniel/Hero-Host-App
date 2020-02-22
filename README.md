@@ -12,6 +12,7 @@ This app makes it easy and exciting for users to browse and select recipes for m
 * Landing Page:
 
 ![landing page](https://github.com/CMNathaniel/Hero-Host-App/blob/master/landingpage_screenshot.png)
+![landing page](https://github.com/CMNathaniel/Hero-Host-App/blob/master/landingpage_screenshot.png)
 
 
 * Meal Recipes - Initial Results:
