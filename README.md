@@ -34,7 +34,7 @@ This app makes it easy and exciting for users to browse and select recipes for m
 ![Meal Recipes - Initial Results](https://github.com/CMNathaniel/Hero-Host-App/blob/master/meal_result_screenshot.png)
 
 
-* Meal Recipes - Expanded Results: 
+* Cocktail Recipes - Expanded Results: 
 
 ![Meal Recipes - Expanded Results](https://github.com/CMNathaniel/Hero-Host-App/blob/master/meals_expanded_results.png)
 
