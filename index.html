@@ -15,24 +15,45 @@
         <h1>Hero Host</h1>
     </header>
     <div class="container">
-        <h2>Welcome to the Hero Host App!</h2>
+    <section name="introduction">
+        <h2>Generate a Meal and Cocktail</h2>
         <p>Many people want to host their friends and family in their home, but feel inadequate when it comes to preparing delicious food and drinks.</p>
         <p>It's time for you to be the hero host that you are destined to become and 'wow' your guests with incredible homemade food and drinks.</p>
+    </section>
+    <section name="generate-meal-cocktail-pairing">    
         <div class="landing-page">
-                <button class="search-button" onclick="getRandomMealRecipe()">Find me a meal</button>
-                <button class="search-button" onclick="getRandomCocktailRecipe()">Find me a cocktail</button>
+                <div class="box-row">
+                        <div class="left-column">
+                            <button class="search-button" onclick="getRandomMealRecipe()">Find me a meal</button>
+                        </div>
+                         <div class="right-column">
+                            <button class="search-button" onclick="getRandomCocktailRecipe()">Find me a cocktail</button>
+                        </div>
+                </div>
                 <div class="results-list-container">
                     <div class="box-row">
                         <div class="left-column">  
-                        <ul class="meal-results-list" class="results-list"></ul></div>
+                            <ul class="meal-results-list" class="results-list"></ul>
+                        </div>
                         <div class="right-column">
-                        <ul class="cocktail-results-list" class="results-list"></ul></div>
+                            <ul class="cocktail-results-list" class="results-list"></ul>
+                        </div>
                     </div>
                 </div>
+            </div>
+    </section>
+    <section name="pick-meal-or-cocktail">
+            <h2>Now it's time for you to try!</h2>  
             <p>Are you ready to start hosting? What type of recipe do you want to start searching for - meal recipes or cocktail recipes?</p>
-            <a href="meals.html"><img src="./meal_image.jpg" alt="meal recipe"></a>
-            <a href="cocktails.html"><img src="./cocktail_image.jpg" alt="cocktail recipe"></a>  
-        </div>
+            <div class="box-row">
+                <div class="left-column">  
+                    <a href="meals.html"><img src="./meal_image.jpg" alt="meal recipe"></a>
+                </div>
+                <div class="right-column">
+                    <a href="cocktails.html"><img src="./cocktail_image.jpg" alt="cocktail recipe"></a>
+                </div>  
+            </div>
+    </section>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="script.js"></script>

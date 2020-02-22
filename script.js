@@ -129,7 +129,6 @@ function displayMealResults(responseJson) {
           <div class="result-item-info" style="display: none">
               <p>Region: ${meals.strArea}</p>
               <p>Category: ${meals.strCategory}</p>
-              <p>Instructions: ${meals.strInstructions}</p>
               <div class="result-item-ingredients" class="meal-ingredients">
                    <p>Ingredients Preview:</p>
                <ol>
@@ -141,6 +140,7 @@ function displayMealResults(responseJson) {
                    <li>${meals.strIngredient6} - ${meals.strMeasure6}</li>
               </ol>
               <p><a href="${meals.strYoutube}" target="_blank">Video instructions</a> | <a href="${meals.strSource}" target="_blank">Learn more about this recipe</a></p>
+              <p>Instructions: ${meals.strInstructions}</p>
               </div>
           </div>
           </li>`
