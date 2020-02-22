@@ -86,13 +86,13 @@ function displayMealResults(responseJson) {
     responseJson.meals.forEach((meals) => {
     $(".meal-results-list").append(
       `<ul>
-        <li><h3><button type="button" class="collapsible">${meals.strMeal}</button></h3></li>
+        <li><h3><button type="button" class="collapsible-trigger">${meals.strMeal}</button></h3></li>
         <li><a href="${meals.strSource}" target="_blank"><img src="${meals.strMealThumb}" alt="${meals.strMeal}"></a></li>
       </ul>`
      );
     // display expanded results that contains additional details 
     $(".meal-expanded-results").append(
-      `<ul class="content">
+      `<ul>
           <li><h3>${meals.strMeal}</h3></li>
           <li><a href="${meals.strSource}" target="_blank"><img src="${meals.strMealThumb}" alt="${meals.strMeal}"></a></li>
           <li><p><a href="${meals.strYoutube}" target="_blank">Watch a how-to video</a></p>
@@ -125,14 +125,14 @@ function displayCocktailResults(responseJson) {
   responseJson.drinks.forEach((drinks) => {
   $(".cocktail-results-list").append(
     `<ul>
-      <li><h3><button type="button" class="collapsible">${drinks.strDrink}</button></h3></li>
+      <li><h3><button type="button" class="collapsible-trigger">${drinks.strDrink}</button></h3></li>
       <li><img src="${drinks.strDrinkThumb}" class="results-img" alt="${drinks.strDrink}"></li>
     </ul>`
       );
   // Display expanded cocktail recipe results that contain additional details 
   $(".cocktail-expanded-results").append(
-    `<ul class="content">
-        <li><h3>${drinks.strDrink}</h3></li>
+    `<ul>
+        <li><h3>${drinks.strDrink}<button type="button" class="collapsible-trigger"></button></h3></li>
         <li><img src="${drinks.strDrinkThumb}" class="results-img" alt="${drinks.strDrink}"></li>
         <li><p>Type of Glass: ${drinks.strGlass}</p></li>
         <li><p>Category: ${drinks.strCategory}</p></li>
@@ -150,7 +150,32 @@ function displayCocktailResults(responseJson) {
   })
 };
 
-function expandResults() {
+function watchCollapsible() {
+    $(document).on("click", ".collapsible-trigger", function () {
+    $(".cocktail-expanded-results").slideToggle("slow");
+    $(".cocktail-results-list").toggleClass("hidden");
+    })
+}
+
+$(function() {
+    watchMealForm();
+    watchCocktailForm();
+    watchCollapsible();
+}); 
+
+/*function expandResults() {
+    $("h3.meal-results-list").click() {
+        $("meal-expanded-results").slideToggle("slow");
+    });
+}  */
+/*
+
+$(document).on("click", ".collapsible-trigger", function () {
+    $(".cocktail-expanded-results").slideToggle("slow"); 
+    
+   }) */
+
+/*function expandResults() {
     
     var coll = document.getElementsByClassName("collapsible");
     var i;
@@ -186,7 +211,3 @@ function expandResults() {
 
 
 
-$(function() {
-watchMealForm();
-watchCocktailForm();
-}); 

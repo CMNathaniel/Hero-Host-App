@@ -136,14 +136,8 @@ ul {
   font-size: 22px;
 }
 
-.active, .collapsible:hover {
+.active, .collapsible-trigger:hover {
   background-color: #555;
-}
-
-.content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
 }
 
 .error-message {
