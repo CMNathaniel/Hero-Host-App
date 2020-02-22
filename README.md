@@ -4,6 +4,10 @@ This is an app for people that have the desire to be a better host for their fri
 
 This app makes it easy and exciting for users to browse and select recipes for more main course meals and cocktails. The user will delight their guests with their kitchen creations and become a Hero Host after using this app. 
 
+## Demo
+
+- [Live Demo](https://cmnathaniel.github.io/Hero-Host-App/)
+
 ## Screenshots
 * Landing Page:
 
@@ -17,11 +21,6 @@ This app makes it easy and exciting for users to browse and select recipes for m
 
 * Meal Recipes - Expanded Results: 
 ![Meal Recipes - Expanded Results](https://github.com/CMNathaniel/Hero-Host-App/blob/master/meals_expanded_results.png)
-
-
-## Demo
-
-- [Live Demo](https://cmnathaniel.github.io/Hero-Host-App/)
 
 ## Technology Used 
 
