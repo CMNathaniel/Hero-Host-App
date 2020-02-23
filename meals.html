@@ -10,29 +10,31 @@
     <link href="https://fonts.googleapis.com/css?family=Biryani" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <h1>Hero Host</h1>
-        <p><a href="cocktails.html" class="search-button">Go to Cocktail Recipes</a></p>
-    </header>
-    <div class="container">
-        <h2>Meal Recipe Finder</h2>
-        <button class="search-button" onclick="getRandomMealRecipe()">Surprise me!</button>
-        <form id="meal-form">
-            <br>
-            <label for="meal-recipe">Search for a meal recipe name</label>
-            <input class="js-search-term" id="meal-search" name="search-term" type="text" value="soup" required/>
-            <br>
-            <button type="submit" class="search-button">Find my recipes</button>
-        </form>
-        <p class="error-message"></p>
-        <section class="meal-results hidden">
-          <h2>Meal Recipe Results</h2>
-          <header class="result-item-header">
-            <ul class="meal-results-list results-list"></ul>
-          </header>
-        </section>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="script.js"></script> 
+  <header class="header">
+    <h1>Hero Host</h1>
+    <p><a href="cocktails.html" class="search-button">Go to Cocktail Recipes</a></p>
+  </header>
+  <div class="container">
+    <h2>Meal Recipe Finder</h2>
+    <button class="search-button" onclick="getRandomMealRecipe()">Surprise me!</button>
+    <form id="meal-form">
+      <br>
+      <label for="meal-recipe">Search for a meal recipe name</label>
+      <input class="js-search-term" id="meal-search" name="search-term" type="text" value="soup" required/>
+      <br>
+      <button type="submit" class="search-button">Find my recipes</button>
+    </form>
+    <p class="error-message"></p>
+        
+    <section class="meal-results hidden">
+      <h2>Meal Recipe Results</h2>
+      <header class="result-item-header">
+        <ul class="meal-results-list results-list"></ul>
+      </header>
+    </section>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="script.js"></script> 
 </body>
 </html>
