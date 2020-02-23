@@ -121,13 +121,14 @@ ul {
   color: black;
 }
 
-.results-list img {
+.results-img {
   max-width: 150px;
   border-radius: 20px;
 }
 
 .collapsible-trigger {
   color: #ff0000;
+  font-family: 'Biryani', sans-serif;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -135,6 +136,7 @@ ul {
   text-align: left;
   outline: none;
   font-size: 22px;
+  background-color: #fff7e6;
 }
 
 .active, .collapsible-trigger:hover {

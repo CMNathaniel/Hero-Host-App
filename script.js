@@ -86,7 +86,7 @@ function displayCocktailResults(responseJson) {
   $(".cocktail-results-list").append(
   `<li class="result-item">
     <header class="result-item-header">
-      <h3 role="button" class="collapsible-trigger">${drinks.strDrink}</h3>
+      <h3><button type="button" class="collapsible-trigger">${drinks.strDrink}</button></h3>
       <div>
         <img src="${drinks.strDrinkThumb}" class="results-img" alt="${drinks.strDrink}"/>
       </div>
@@ -120,7 +120,7 @@ function displayMealResults(responseJson) {
   $(".meal-results-list").append(
   `<li class="result-item">
     <header class="result-item-header">
-      <h3 role="button" class="collapsible-trigger">${meals.strMeal}</h3>
+      <h3><button type="button" class="collapsible-trigger">${meals.strMeal}</button></h3>
         <div>
           <img src="${meals.strMealThumb}" class="results-img" alt="${meals.strMeal}"/>
         </div>
